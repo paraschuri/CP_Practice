@@ -76,14 +76,14 @@ void solve()
     cin>>n;
     vi arr(n);
     input(arr);
-    int ans=*max_element(all(arr)),curr=0;
+    int ans=*max_element(all(arr)),currMax=0;
     for(int i=0;i<n;i++){
         if(i && (abs(arr[i])%2==abs(arr[i-1])%2)){
-            curr=0;
+            currMax=0;
         }
-        curr+=arr[i];
-        ans=max(ans,curr);
-        if(curr<0)curr=0;
+        currMax+=arr[i];
+        ans=max(ans,currMax);
+        if(currMax<0)currMax=0;
     }
     cout<<ans<<endl;
 }
